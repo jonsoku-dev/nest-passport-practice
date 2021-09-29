@@ -11,13 +11,13 @@ export class AppController {
   @Post('login')
   login(@Req() req): any {
     console.log('login controller');
-    return req.user;
+    return req.user; // TODO: return JWT access Token
   }
 
   @UseGuards(AuthenticatedGuard)
   @Get('protected')
   getHello(@Req() req): any {
     console.log('protected controller');
-    return req.user;
+    return req.user; // TODO: require an Bearer token, validate token
   }
 }
