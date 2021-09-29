@@ -17,6 +17,7 @@ export class AppController {
   @UseGuards(AuthenticatedGuard)
   @Get('protected')
   getHello(@Req() req): any {
+    console.log('protected controller');
     return req.user;
   }
 }
